@@ -91,6 +91,51 @@ export const nav = [
   { label: "Apply", href: "/apply" },
 ];
 
+// --- Board members -----------------------------------------------------------
+// Photos live in /public/board. NOTE: the Lisa vs. Annie photo mapping is a
+// best guess pulled from the old site — verify and swap `photo` paths if needed.
+export const board = [
+  {
+    name: "Lisa Terry",
+    role: "Founder · Noah's mother",
+    photo: "/board/lisa-terry.png",
+    bio: "Noah's mother and a fourth-generation Washingtonian. A lawyer of more than 30 years, Lisa discovered her own love of painting through art history and now devotes her energy to sharing Noah's gifts and launching the careers of young artists.",
+  },
+  {
+    name: "Sophia Marcus",
+    role: "Board member · Noah's sister",
+    photo: "/board/sophia-marcus.png",
+    bio: "Known to many as “Fifi,” Sophia is Noah's little sister. She helped share Noah's work with the world — including the sale of his first piece — and now serves the DMV artist community through the Fund.",
+  },
+  {
+    name: "Josh Klugman",
+    role: "Board member",
+    photo: "/board/josh-klugman.png",
+    bio: "One of Noah's close friends, Josh shared his passion for exploring music and art. A machine-learning data scientist at IBM, he carries forward Noah's spirit of helping people work toward what they're passionate about.",
+  },
+  {
+    name: "Annie Acosta",
+    role: "Board member",
+    photo: "/board/annie-acosta.png",
+    bio: "Annie brings over 25 years of experience in federal public policy, advocacy, and program evaluation across the public and nonprofit sectors. Born and raised in Puerto Rico, she has called DC home for most of her life.",
+  },
+];
+
+// --- Featured artists --------------------------------------------------------
+// Artists the Fund has supported. Images live in /public/art.
+export const featuredArtists = [
+  {
+    name: "Yetunde Sapp",
+    image: "/art/yetunde-sapp.jpg",
+    blurb: "Surrounded by her vivid, figurative canvases — the kind of bold, color-driven work the Fund exists to champion.",
+  },
+  {
+    name: "Adam Reid",
+    image: "/art/adam-reid.jpeg",
+    blurb: "A striking, atmospheric piece that shows the daring approach to color and concept Noah celebrated.",
+  },
+];
+
 // --- FAQ content (doc had none — these are editable starter answers) ---------
 export const faqs = [
   {

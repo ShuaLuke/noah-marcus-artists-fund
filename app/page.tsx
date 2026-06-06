@@ -1,47 +1,60 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-6xl px-5 pt-20 pb-16 md:pt-28 md:pb-24">
-          <p className="animate-rise text-sm font-medium uppercase tracking-[0.2em] text-coral">
-            DC &middot; Maryland &middot; Virginia
-          </p>
-          <h1 className="animate-rise font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl mt-4 max-w-4xl">
-            Celebrating artists
-            <br />
-            who explore color
-            <br />
-            <span className="text-coral">courageously.</span>
-          </h1>
-          <p className="animate-rise mt-7 max-w-xl text-lg text-muted">
-            The Noah Marcus Artists Fund provides grants to bold, emerging
-            artists in the DMV area — helping them actualize their vision and
-            share their voices.
-          </p>
-          <div className="animate-rise mt-9 flex flex-wrap gap-3">
-            <Link
-              href="/donate"
-              className="rounded-full bg-ink px-7 py-3 font-medium text-paper transition-transform hover:-translate-y-0.5"
-            >
-              Donate
-            </Link>
-            <Link
-              href="/apply"
-              className="rounded-full border border-ink px-7 py-3 font-medium transition-colors hover:bg-ink hover:text-paper"
-            >
-              Apply for a grant
-            </Link>
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pt-20 pb-16 md:pt-28 md:pb-24 lg:grid-cols-[1.3fr_1fr]">
+          <div>
+            <p className="animate-rise text-sm font-medium uppercase tracking-[0.2em] text-coral">
+              DC &middot; Maryland &middot; Virginia
+            </p>
+            <h1 className="animate-rise font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl mt-4">
+              Celebrating artists
+              <br />
+              who explore color
+              <br />
+              <span className="text-coral">courageously.</span>
+            </h1>
+            <p className="animate-rise mt-7 max-w-xl text-lg text-muted">
+              The Noah Marcus Artists Fund provides grants to bold, emerging
+              artists in the DMV area — helping them actualize their vision and
+              share their voices.
+            </p>
+            <div className="animate-rise mt-9 flex flex-wrap gap-3">
+              <Link
+                href="/donate"
+                className="rounded-full bg-ink px-7 py-3 font-medium text-paper transition-transform hover:-translate-y-0.5"
+              >
+                Donate
+              </Link>
+              <Link
+                href="/apply"
+                className="rounded-full border border-ink px-7 py-3 font-medium transition-colors hover:bg-ink hover:text-paper"
+              >
+                Apply for a grant
+              </Link>
+            </div>
           </div>
-        </div>
 
-        {/* decorative color bars echoing bold palette */}
-        <div className="absolute -right-10 top-10 hidden gap-3 lg:flex">
-          <div className="h-72 w-6 rounded-full bg-coral/80" />
-          <div className="h-72 w-6 rounded-full bg-ochre/80 mt-12" />
-          <div className="h-72 w-6 rounded-full bg-teal/80 mt-24" />
+          {/* Featured artwork from the community the Fund supports */}
+          <figure className="animate-rise relative mx-auto w-full max-w-sm">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-line shadow-xl shadow-ink/10">
+              <Image
+                src="/art/adam-reid.jpeg"
+                alt="Featured artwork by supported artist Adam Reid"
+                fill
+                priority
+                sizes="(min-width: 1024px) 24rem, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 text-center text-sm text-muted">
+              Work by Adam Reid, a supported artist
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -94,11 +107,25 @@ export default function Home() {
       {/* WHO WE SUPPORT */}
       <section className="border-t border-line bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
-          <div className="grid gap-12 md:grid-cols-[1fr_2fr] md:gap-20">
-            <h2 className="font-display text-3xl font-semibold md:text-4xl">
-              Who we support
-            </h2>
-            <div className="max-w-prose space-y-5 text-lg leading-relaxed text-ink/90">
+          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
+            <figure className="order-2 md:order-1">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-line">
+                <Image
+                  src="/art/yetunde-sapp.jpg"
+                  alt="Artist Yetunde Sapp with her paintings"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-3 text-sm text-muted">
+                Yetunde Sapp, surrounded by her work.
+              </figcaption>
+            </figure>
+            <div className="order-1 max-w-prose space-y-5 text-lg leading-relaxed text-ink/90 md:order-2">
+              <h2 className="font-display text-3xl font-semibold md:text-4xl">
+                Who we support
+              </h2>
               <p>
                 We believe art has the power to transform lives, inspire change,
                 and bring people together. We are committed to supporting local

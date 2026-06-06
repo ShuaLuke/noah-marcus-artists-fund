@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { seo } from "@/lib/content";
+import Image from "next/image";
+import { seo, board, featuredArtists } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: seo.purpose.title,
@@ -32,55 +33,60 @@ export default function PurposePage() {
         </div>
       </div>
 
+      {/* FEATURED ARTWORK — the work the Fund supports */}
+      <section className="mt-16 grid gap-4 sm:grid-cols-2">
+        {featuredArtists.map((art) => (
+          <figure
+            key={art.name}
+            className="group relative overflow-hidden rounded-2xl border border-line bg-ink/5"
+          >
+            <div className="relative aspect-[4/3]">
+              <Image
+                src={art.image}
+                alt={`Artwork featuring ${art.name}`}
+                fill
+                sizes="(min-width: 640px) 50vw, 100vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 to-transparent p-5 text-paper">
+              <span className="font-display text-lg font-semibold">
+                {art.name}
+              </span>
+              <p className="mt-1 text-sm text-paper/85">{art.blurb}</p>
+            </figcaption>
+          </figure>
+        ))}
+      </section>
+
       {/* MEET THE BOARD */}
       <section className="mt-20">
         <div className="hairline mb-12" />
         <h2 className="font-display text-3xl font-semibold md:text-4xl">
           Meet the Board
         </h2>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {/* PLACEHOLDER cards — replace names/roles/bios before launch */}
-          {[1, 2, 3].map((i) => (
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+          {board.map((member) => (
             <div
-              key={i}
-              className="rounded-2xl border border-line p-6"
+              key={member.name}
+              className="flex gap-5 rounded-2xl border border-line p-6"
             >
-              <div className="h-14 w-14 rounded-full bg-ochre/30" />
-              <h3 className="mt-4 font-display text-xl font-semibold">
-                Board Member {i}
-              </h3>
-              <p className="text-sm text-coral">Role / title</p>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
-                Short bio placeholder — replace with a sentence or two about this
-                board member.
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* MEET OUR ADVISORS */}
-      <section className="mt-16">
-        <div className="hairline mb-12" />
-        <h2 className="font-display text-3xl font-semibold md:text-4xl">
-          Meet our Advisors
-        </h2>
-        <p className="mt-3 max-w-prose text-muted">
-          Our advisors lend their expertise to help us identify and support the
-          most promising emerging artists in the region.
-        </p>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[1, 2].map((i) => (
-            <div key={i} className="rounded-2xl border border-line p-6">
-              <div className="h-14 w-14 rounded-full bg-teal/30" />
-              <h3 className="mt-4 font-display text-xl font-semibold">
-                Advisor {i}
-              </h3>
-              <p className="text-sm text-coral">Role / title</p>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
-                Short bio placeholder — replace with this advisor&rsquo;s
-                background.
-              </p>
+              <Image
+                src={member.photo}
+                alt={member.name}
+                width={88}
+                height={88}
+                className="h-20 w-20 flex-shrink-0 rounded-full object-cover"
+              />
+              <div>
+                <h3 className="font-display text-xl font-semibold">
+                  {member.name}
+                </h3>
+                <p className="text-sm text-coral">{member.role}</p>
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {member.bio}
+                </p>
+              </div>
             </div>
           ))}
         </div>
