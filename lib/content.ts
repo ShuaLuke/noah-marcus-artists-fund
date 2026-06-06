@@ -105,7 +105,7 @@ export const board = [
     name: "Sophia Marcus",
     role: "Board member · Noah's sister",
     photo: "/board/sophia-marcus.png",
-    bio: "Known to many as “Fifi,” Sophia is Noah's little sister. She helped share Noah's work with the world — including the sale of his first piece — and now serves the DMV artist community through the Fund.",
+    bio: "Noah's little sister and a fifth-generation native Washingtonian with a passion for equity, inclusivity, and justice. Sophia earned her B.A. in Economics and French & Francophone Studies from the College of William & Mary and is pursuing a master's in public policy at the University of Virginia. She helped share Noah's work with the world — including the sale of his first piece — and now serves the DMV artist community in his honor.",
   },
   {
     name: "Josh Klugman",
@@ -135,6 +135,20 @@ export const featuredArtists = [
     blurb: "A striking, atmospheric piece that shows the daring approach to color and concept Noah celebrated.",
   },
 ];
+
+// --- Noah's own artwork ------------------------------------------------------
+// TO FEATURE NOAH'S PAINTINGS: drop image files in /public/noah-art and add an
+// entry below. Anything listed here renders in the gallery on Noah's Story (and
+// the first item becomes the homepage hero image). Leave empty to hide it.
+// e.g. { title: "Charlottesville Horror", year: "2018", image: "/noah-art/charlottesville-horror.jpg",
+//        medium: "Oil on canvas", note: "A response to the white-supremacist violence in Charlottesville." }
+export const noahWorks: {
+  title: string;
+  year?: string;
+  image: string;
+  medium?: string;
+  note?: string;
+}[] = [];
 
 // --- FAQ content (doc had none — these are editable starter answers) ---------
 export const faqs = [
