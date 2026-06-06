@@ -8,11 +8,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Palette drawn from Noah's paintings — his blues, teals, coral,
+        // ochre, and plum recur across his work.
         paper: "#F7F3EC",
         ink: "#1A1714",
-        coral: "#E8543A",
+        coral: "#D8463A",
         ochre: "#E0A43B",
-        teal: "#2C6E6A",
+        teal: "#2A8F84",
+        blue: "#3A6E99",
+        plum: "#8C3F63",
         muted: "#6B635A",
         line: "#DED6C8",
       },

@@ -72,6 +72,8 @@ export default function Home() {
             <div className="h-72 w-6 rounded-full bg-coral/80" />
             <div className="h-72 w-6 rounded-full bg-ochre/80 mt-12" />
             <div className="h-72 w-6 rounded-full bg-teal/80 mt-24" />
+            <div className="h-72 w-6 rounded-full bg-blue/80 mt-36" />
+            <div className="h-72 w-6 rounded-full bg-plum/80 mt-48" />
           </div>
         )}
       </section>
@@ -149,7 +151,7 @@ export default function Home() {
 
       {/* JOIN OUR CAUSE */}
       <section className="mx-auto max-w-6xl px-5 pb-24">
-        <div className="rounded-3xl bg-teal px-8 py-14 text-paper md:px-16 md:py-20">
+        <div className="rounded-3xl bg-gradient-to-br from-blue to-teal px-8 py-14 text-paper md:px-16 md:py-20">
           <h2 className="font-display text-3xl font-semibold md:text-5xl max-w-2xl">
             Join our cause.
           </h2>

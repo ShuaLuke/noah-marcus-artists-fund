@@ -143,7 +143,22 @@ export const noahWorks: {
   image: string;
   medium?: string;
   note?: string;
-}[] = [];
+}[] = [
+  { title: "Untitled", image: "/noah-art/untitled-1.jpeg" },
+  { title: "Untitled", image: "/noah-art/untitled-2.jpeg" },
+  { title: "Untitled", image: "/noah-art/untitled-3.png" },
+  { title: "Untitled", image: "/noah-art/untitled-4.png" },
+  { title: "Untitled", image: "/noah-art/untitled-5.jpeg" },
+  { title: "Untitled", image: "/noah-art/untitled-6.jpeg" },
+  {
+    title: "Priest",
+    image: "/noah-art/priest.jpeg",
+    note: "One of Noah's pointed responses to social injustice — depicting child-abusing clergy as monsters.",
+  },
+];
+
+// Photo of Noah himself, shown on Noah's Story.
+export const noahPortrait = "/noah-art/noah-portrait.jpg";
 
 // --- FAQ content (doc had none — these are editable starter answers) ---------
 export const faqs = [

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { seo, featuredArtists } from "@/lib/content";
+import { seo, featuredArtists, noahWorks } from "@/lib/content";
 import DonateClient from "@/components/DonateClient";
 
 export const metadata: Metadata = {
@@ -25,6 +25,23 @@ export default function DonatePage() {
           Fund is a registered 501(c)(3), so your donation may be tax-deductible.
         </p>
       </div>
+
+      {noahWorks.length > 1 && (
+        <figure className="mt-10 overflow-hidden rounded-3xl border border-line">
+          <div className="relative aspect-[16/7]">
+            <Image
+              src={noahWorks[3].image}
+              alt="Painting by Noah Marcus"
+              fill
+              sizes="(min-width: 1152px) 1088px, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="px-5 py-3 text-sm text-muted">
+            Painting by Noah Marcus
+          </figcaption>
+        </figure>
+      )}
 
       <DonateClient />
 

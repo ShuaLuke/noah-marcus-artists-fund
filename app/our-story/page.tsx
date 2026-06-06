@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { seo, noahWorks } from "@/lib/content";
+import { seo, noahWorks, noahPortrait } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: seo.story.title,
@@ -18,6 +18,22 @@ export default function StoryPage() {
       <h1 className="mt-3 font-display text-4xl font-semibold md:text-6xl">
         A life lived in bold color.
       </h1>
+
+      <figure className="mt-8 overflow-hidden rounded-3xl border border-line">
+        <div className="relative aspect-[16/10]">
+          <Image
+            src={noahPortrait}
+            alt="Noah Marcus"
+            fill
+            priority
+            sizes="(min-width: 768px) 48rem, 100vw"
+            className="object-cover"
+          />
+        </div>
+        <figcaption className="px-5 py-3 text-sm text-muted">
+          Noah Marcus
+        </figcaption>
+      </figure>
 
       <div className="mt-10 max-w-prose space-y-6 text-lg leading-relaxed text-ink/90">
         <p>
@@ -42,6 +58,13 @@ export default function StoryPage() {
           against white supremacy, and <em>Priest</em>, where he depicts
           child-abusing clergy as monsters. Noah&rsquo;s collection reveals both
           the beauty and the darkness of the world.
+        </p>
+        <p>
+          Noah was also the quintessential, and rare, artist-athlete. He played
+          high-school football, became a serious weightlifter in college, and
+          joined the rugby team — and just days after tearing a pectoral in a
+          match, he created three beautiful nude sketches with his off-hand. He
+          loved the competition of sport, but even more, he loved his teammates.
         </p>
       </div>
 
@@ -87,29 +110,6 @@ export default function StoryPage() {
           </div>
         </section>
       )}
-
-      {/* NOAH THE ATHLETE */}
-      <section className="mt-14 rounded-2xl border border-line bg-paper p-7 md:p-9">
-        <h2 className="font-display text-2xl font-semibold md:text-3xl">
-          Noah the athlete
-        </h2>
-        <div className="mt-4 max-w-prose space-y-5 text-lg leading-relaxed text-ink/90">
-          <p>
-            Noah was the quintessential — and rare — artist-athlete. He joined
-            the football team in high school even though, as a friend joked, he
-            was &ldquo;a buck-fifty wet.&rdquo; He was determined to make the team
-            and pushed himself to near collapse at practice. In college he became
-            a serious weightlifter and transformed his naturally lean frame, then
-            joined the rugby team — not before assuring his worried mom that the
-            sport is &ldquo;safer than football.&rdquo;
-          </p>
-          <p>
-            Days after tearing his pectoral in a match, Noah created three
-            beautiful nude sketches with his off-hand. He loved the competition
-            of sport, but even more, he loved his teammates.
-          </p>
-        </div>
-      </section>
 
       <div className="mt-12 flex flex-wrap gap-3">
         <Link

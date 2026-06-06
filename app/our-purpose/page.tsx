@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { seo, board, featuredArtists } from "@/lib/content";
+import { seo, board, featuredArtists, noahWorks } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: seo.purpose.title,
@@ -32,6 +32,24 @@ export default function PurposePage() {
           </p>
         </div>
       </div>
+
+      {/* NOAH'S WORK — banner */}
+      {noahWorks.length > 0 && (
+        <figure className="mt-12 overflow-hidden rounded-3xl border border-line">
+          <div className="relative aspect-[16/7]">
+            <Image
+              src={noahWorks[0].image}
+              alt="Painting by Noah Marcus"
+              fill
+              sizes="(min-width: 1152px) 1088px, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="px-5 py-3 text-sm text-muted">
+            Painting by Noah Marcus
+          </figcaption>
+        </figure>
+      )}
 
       {/* FEATURED ARTWORK — renders only once there are grant recipients */}
       {featuredArtists.length > 0 && (

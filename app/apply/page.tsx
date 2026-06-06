@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { seo, application } from "@/lib/content";
+import Image from "next/image";
+import { seo, application, noahWorks } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: seo.apply.title,
@@ -24,6 +25,23 @@ export default function ApplyPage() {
           first step toward receiving funding to support your artistic journey.
         </p>
       </div>
+
+      {noahWorks.length > 4 && (
+        <figure className="mt-10 overflow-hidden rounded-3xl border border-line">
+          <div className="relative aspect-[16/8]">
+            <Image
+              src={noahWorks[4].image}
+              alt="Painting by Noah Marcus"
+              fill
+              sizes="(min-width: 768px) 48rem, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="px-5 py-3 text-sm text-muted">
+            Painting by Noah Marcus
+          </figcaption>
+        </figure>
+      )}
 
       {application.mode === "google-form" ? (
         <div className="mt-10">
