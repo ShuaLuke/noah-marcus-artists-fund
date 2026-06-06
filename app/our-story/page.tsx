@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { seo, noahWorks, noahPortrait } from "@/lib/content";
+import { cta } from "@/lib/styles";
 
 export const metadata: Metadata = {
   title: seo.story.title,
@@ -106,16 +107,10 @@ export default function StoryPage() {
       )}
 
       <div className="mt-12 flex flex-wrap gap-3">
-        <Link
-          href="/our-purpose"
-          className="rounded-full border border-ink px-6 py-3 font-medium transition-colors hover:bg-ink hover:text-paper"
-        >
+        <Link href="/our-purpose" className={cta.secondary}>
           Our purpose
         </Link>
-        <Link
-          href="/donate"
-          className="rounded-full bg-coral px-6 py-3 font-medium text-paper transition-transform hover:-translate-y-0.5"
-        >
+        <Link href="/donate" className={cta.primary}>
           Support the Fund
         </Link>
       </div>

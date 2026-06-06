@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { seo, board, featuredArtists, noahWorks } from "@/lib/content";
+import { cta } from "@/lib/styles";
 
 export const metadata: Metadata = {
   title: seo.purpose.title,
@@ -115,16 +116,10 @@ export default function PurposePage() {
       </section>
 
       <div className="mt-16 flex flex-wrap gap-3">
-        <Link
-          href="/our-story"
-          className="rounded-full border border-ink px-6 py-3 font-medium transition-colors hover:bg-ink hover:text-paper"
-        >
+        <Link href="/our-story" className={cta.secondary}>
           Read Noah&rsquo;s story
         </Link>
-        <Link
-          href="/apply"
-          className="rounded-full bg-coral px-6 py-3 font-medium text-paper transition-transform hover:-translate-y-0.5"
-        >
+        <Link href="/apply" className={cta.primary}>
           Apply for a grant
         </Link>
       </div>

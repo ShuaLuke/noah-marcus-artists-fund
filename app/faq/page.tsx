@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { seo, faqs } from "@/lib/content";
+import { cta } from "@/lib/styles";
 
 export const metadata: Metadata = {
   title: seo.faq.title,
@@ -38,10 +39,7 @@ export default function FaqPage() {
 
       <div className="mt-12 rounded-2xl bg-paper border border-line p-8 text-center">
         <p className="text-muted">Still have a question?</p>
-        <Link
-          href="/apply"
-          className="mt-4 inline-block rounded-full bg-coral px-7 py-3 font-medium text-paper transition-transform hover:-translate-y-0.5"
-        >
+        <Link href="/apply" className={`mt-4 ${cta.primary}`}>
           Start an application
         </Link>
       </div>

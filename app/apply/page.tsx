@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { seo, application, noahWorks } from "@/lib/content";
+import { cta } from "@/lib/styles";
 
 export const metadata: Metadata = {
   title: seo.apply.title,
@@ -35,7 +36,7 @@ export default function ApplyPage() {
                 href={application.googleFormUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-full bg-coral px-8 py-3.5 font-medium text-paper transition-transform hover:-translate-y-0.5"
+                className={cta.primary}
               >
                 Start your application &rarr;
               </a>

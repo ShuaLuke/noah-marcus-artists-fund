@@ -132,7 +132,7 @@ export default function DonateClient() {
         <button
           onClick={handleDonate}
           disabled={loading}
-          className="mt-6 w-full rounded-full bg-ink py-3.5 font-medium text-paper transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0"
+          className="mt-6 w-full rounded-full bg-coral py-3.5 font-medium text-paper transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0"
         >
           {loading ? "Redirecting…" : "Donate securely"}
         </button>

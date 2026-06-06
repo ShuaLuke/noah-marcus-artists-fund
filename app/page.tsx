@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { noahWorks } from "@/lib/content";
+import { cta } from "@/lib/styles";
 
 export default function Home() {
   const heroArt = noahWorks[0];
@@ -30,16 +31,10 @@ export default function Home() {
               share their voices.
             </p>
             <div className="animate-rise mt-9 flex flex-wrap gap-3">
-              <Link
-                href="/donate"
-                className="rounded-full bg-ink px-7 py-3 font-medium text-paper transition-transform hover:-translate-y-0.5"
-              >
+              <Link href="/donate" className={cta.primary}>
                 Donate
               </Link>
-              <Link
-                href="/apply"
-                className="rounded-full border border-ink px-7 py-3 font-medium transition-colors hover:bg-ink hover:text-paper"
-              >
+              <Link href="/apply" className={cta.secondary}>
                 Apply for a grant
               </Link>
             </div>
@@ -160,10 +155,7 @@ export default function Home() {
             the word — ensures Noah&rsquo;s legacy leaves a lasting impact on the
             lives and work of artists across the DMV area.
           </p>
-          <Link
-            href="/donate"
-            className="mt-8 inline-block rounded-full bg-paper px-7 py-3 font-medium text-ink transition-transform hover:-translate-y-0.5"
-          >
+          <Link href="/donate" className={`mt-8 ${cta.onDark}`}>
             Donate today
           </Link>
         </div>
