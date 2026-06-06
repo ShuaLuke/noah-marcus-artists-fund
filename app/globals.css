@@ -30,6 +30,28 @@ body {
   letter-spacing: -0.015em;
 }
 
+/* Sunset sky: light blue with wispy pink clouds, fading into the paper.
+   Pink wisps glow and contrast against the blue. */
+.sky-sunset {
+  background:
+    radial-gradient(
+      52% 30% at 16% 20%,
+      rgba(232, 160, 182, 0.5),
+      transparent 72%
+    ),
+    radial-gradient(
+      44% 24% at 70% 14%,
+      rgba(232, 160, 182, 0.4),
+      transparent 70%
+    ),
+    radial-gradient(
+      40% 30% at 90% 38%,
+      rgba(244, 184, 152, 0.32),
+      transparent 72%
+    ),
+    linear-gradient(165deg, #bcdcef 0%, #d8e8f2 38%, #f7f3ec 80%);
+}
+
 /* Decorative hairline used between sections */
 .hairline {
   height: 1px;

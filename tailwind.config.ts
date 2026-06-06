@@ -18,6 +18,8 @@ const config: Config = {
         blue: "#3A6E99",
         navy: "#22425C",
         plum: "#8C3F63",
+        sky: "#BCDCEF",
+        blush: "#E8A0B6",
         muted: "#6B635A",
         line: "#DED6C8",
       },

@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section className="sky-sunset relative overflow-hidden">
         <div
           className={`mx-auto grid max-w-6xl items-center gap-12 px-5 pt-20 pb-16 md:pt-28 md:pb-24 ${
             heroArt ? "lg:grid-cols-[1.3fr_1fr]" : ""
@@ -79,7 +79,7 @@ export default function Home() {
       </section>
 
       {/* QUOTE */}
-      <section className="border-y border-line bg-navy text-paper">
+      <section className="border-y border-line bg-gradient-to-br from-navy to-plum text-paper">
         <div className="mx-auto max-w-4xl px-5 py-16 md:py-24 text-center">
           <blockquote className="font-display text-2xl font-medium leading-snug md:text-4xl">
             &ldquo;Art can be so turbulent at times for the creator. You never
