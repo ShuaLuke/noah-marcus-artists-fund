@@ -44,7 +44,14 @@ export default function RootLayout({
       <body className="font-body antialiased min-h-screen flex flex-col">
         <Banner />
         <Nav />
-        <main className="flex-1">{children}</main>
+        <main className="relative isolate flex-1">
+          {/* Site-wide sunset wash at the top of every page */}
+          <div
+            aria-hidden
+            className="top-sky pointer-events-none absolute inset-x-0 top-0 -z-10 h-[34rem]"
+          />
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
