@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m 'Holistic design polish for cohesion and quality *)",
+      "Bash(git push *)",
+      "Bash(vercel deploy *)",
+      "Bash(echo \"deploy exit=$?\")",
+      "Read(//tmp/**)"
+    ]
+  }
+}

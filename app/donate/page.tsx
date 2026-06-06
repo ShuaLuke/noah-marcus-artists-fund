@@ -12,36 +12,39 @@ export const metadata: Metadata = {
 export default function DonatePage() {
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
-      <div className="max-w-2xl">
-        <p className="text-sm font-medium uppercase tracking-[0.2em] text-coral">
-          Donate
-        </p>
-        <h1 className="mt-3 font-display text-4xl font-semibold md:text-6xl">
-          Empower the next bold voice.
-        </h1>
-        <p className="mt-5 text-lg text-muted">
-          Every gift directly funds grants for emerging artists in the DMV area,
-          honoring Noah&rsquo;s legacy and passion for creative expression. The
-          Fund is a registered 501(c)(3), so your donation may be tax-deductible.
-        </p>
-      </div>
+      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-coral">
+            Donate
+          </p>
+          <h1 className="mt-3 font-display text-4xl font-semibold md:text-6xl">
+            Empower the next bold voice.
+          </h1>
+          <p className="mt-5 text-lg text-muted">
+            Every gift directly funds grants for emerging artists in the DMV
+            area, honoring Noah&rsquo;s legacy and passion for creative
+            expression. The Fund is a registered 501(c)(3), so your donation may
+            be tax-deductible.
+          </p>
+        </div>
 
-      {noahWorks.length > 1 && (
-        <figure className="mt-10 overflow-hidden rounded-3xl border border-line">
-          <div className="relative aspect-[16/7]">
-            <Image
-              src={noahWorks[1].image}
-              alt="Painting by Noah Marcus"
-              fill
-              sizes="(min-width: 1152px) 1088px, 100vw"
-              className="object-cover"
-            />
-          </div>
-          <figcaption className="px-5 py-3 text-sm text-muted">
-            Painting by Noah Marcus
-          </figcaption>
-        </figure>
-      )}
+        {noahWorks.length > 2 && (
+          <figure className="mx-auto w-full max-w-sm lg:order-last">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-line shadow-xl shadow-ink/10">
+              <Image
+                src={noahWorks[2].image}
+                alt="Painting by Noah Marcus"
+                fill
+                sizes="(min-width: 1024px) 24rem, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 text-center text-sm text-muted">
+              Painting by Noah Marcus
+            </figcaption>
+          </figure>
+        )}
+      </div>
 
       <DonateClient />
 

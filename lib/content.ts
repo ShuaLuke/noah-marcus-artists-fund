@@ -141,19 +141,23 @@ export const noahWorks: {
   title: string;
   year?: string;
   image: string;
+  width: number;
+  height: number;
   medium?: string;
   note?: string;
 }[] = [
-  // Order matters: [0] is the homepage hero; banners reference specific indices.
-  { title: "Untitled", image: "/noah-art/untitled-2.jpeg" }, // [0] blue abstract — home hero
-  { title: "Untitled", image: "/noah-art/untitled-3.png" }, //  [1] blue seascape — donate banner
-  { title: "Untitled", image: "/noah-art/untitled-1.jpeg" }, // [2] vibrant — our purpose banner
-  { title: "Untitled", image: "/noah-art/untitled-6.jpeg" }, // [3] figurative
-  { title: "Untitled", image: "/noah-art/untitled-4.png" }, //  [4] teal/red — apply banner
-  { title: "Untitled", image: "/noah-art/untitled-5.jpeg" }, // [5] warm pastel
+  // Order matters: [0] is the homepage hero; page headers reference set indices.
+  { title: "Untitled", image: "/noah-art/untitled-2.jpeg", width: 430, height: 640 }, // [0] blue abstract — home hero
+  { title: "Untitled", image: "/noah-art/untitled-3.png", width: 514, height: 1584 }, // [1] blue seascape — donate
+  { title: "Untitled", image: "/noah-art/untitled-1.jpeg", width: 640, height: 474 }, // [2] vibrant
+  { title: "Untitled", image: "/noah-art/untitled-6.jpeg", width: 640, height: 479 }, // [3] figurative
+  { title: "Untitled", image: "/noah-art/untitled-4.png", width: 508, height: 1586 }, // [4] teal/red — apply
+  { title: "Untitled", image: "/noah-art/untitled-5.jpeg", width: 480, height: 637 }, // [5] warm pastel — our purpose
   {
     title: "Priest", // [6]
     image: "/noah-art/priest.jpeg",
+    width: 481,
+    height: 490,
     note: "One of Noah's pointed responses to social injustice — depicting child-abusing clergy as monsters.",
   },
 ];

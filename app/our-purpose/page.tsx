@@ -12,44 +12,46 @@ export const metadata: Metadata = {
 export default function PurposePage() {
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
-      <div className="max-w-3xl">
-        <p className="text-sm font-medium uppercase tracking-[0.2em] text-coral">
-          Our Purpose
-        </p>
-        <h1 className="mt-3 font-display text-4xl font-semibold md:text-6xl">
-          Noah&rsquo;s passion for art lives on.
-        </h1>
-        <div className="mt-8 max-w-prose space-y-5 text-lg leading-relaxed text-ink/90">
-          <p>
-            The Noah Marcus Artists Fund exists to celebrate, recognize, and
-            empower outspoken, emerging artists within the DMV area by providing
-            the financial assistance they need to actualize their visions.
+      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-coral">
+            Our Purpose
           </p>
-          <p>
-            We seek out artists who not only have something to say, but take a
-            daring approach in saying it — and who, like Noah, explore color
-            courageously.
-          </p>
-        </div>
-      </div>
-
-      {/* NOAH'S WORK — banner */}
-      {noahWorks.length > 0 && (
-        <figure className="mt-12 overflow-hidden rounded-3xl border border-line">
-          <div className="relative aspect-[16/7]">
-            <Image
-              src={noahWorks[2].image}
-              alt="Painting by Noah Marcus"
-              fill
-              sizes="(min-width: 1152px) 1088px, 100vw"
-              className="object-cover"
-            />
+          <h1 className="mt-3 font-display text-4xl font-semibold md:text-6xl">
+            Noah&rsquo;s passion for art lives on.
+          </h1>
+          <div className="mt-8 max-w-prose space-y-5 text-lg leading-relaxed text-ink/90">
+            <p>
+              The Noah Marcus Artists Fund exists to celebrate, recognize, and
+              empower outspoken, emerging artists within the DMV area by
+              providing the financial assistance they need to actualize their
+              visions.
+            </p>
+            <p>
+              We seek out artists who not only have something to say, but take a
+              daring approach in saying it — and who, like Noah, explore color
+              courageously.
+            </p>
           </div>
-          <figcaption className="px-5 py-3 text-sm text-muted">
-            Painting by Noah Marcus
-          </figcaption>
-        </figure>
-      )}
+        </div>
+
+        {noahWorks.length > 5 && (
+          <figure className="mx-auto w-full max-w-sm lg:order-last">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-line shadow-xl shadow-ink/10">
+              <Image
+                src={noahWorks[5].image}
+                alt="Painting by Noah Marcus"
+                fill
+                sizes="(min-width: 1024px) 24rem, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 text-center text-sm text-muted">
+              Painting by Noah Marcus
+            </figcaption>
+          </figure>
+        )}
+      </div>
 
       {/* FEATURED ARTWORK — renders only once there are grant recipients */}
       {featuredArtists.length > 0 && (

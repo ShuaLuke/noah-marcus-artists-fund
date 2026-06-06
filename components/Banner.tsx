@@ -4,7 +4,7 @@ import { site } from "@/lib/content";
 export default function Banner() {
   if (!site.banner) return null;
   return (
-    <div className="bg-ink text-paper text-sm">
+    <div className="bg-navy text-paper text-sm">
       <div className="mx-auto max-w-6xl px-5 py-2.5 flex items-center justify-center gap-3 text-center">
         <span className="opacity-90">{site.banner.text}</span>
         <Link

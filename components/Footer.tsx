@@ -3,7 +3,8 @@ import { site, nav } from "@/lib/content";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-line mt-24">
+    <footer className="mt-24">
+      <div className="h-1 w-full bg-gradient-to-r from-coral via-plum to-blue" />
       <div className="mx-auto max-w-6xl px-5 py-14">
         <div className="grid gap-10 md:grid-cols-3">
           <div>

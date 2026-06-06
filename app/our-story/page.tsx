@@ -19,20 +19,17 @@ export default function StoryPage() {
         A life lived in bold color.
       </h1>
 
-      <figure className="mt-8 overflow-hidden rounded-3xl border border-line">
-        <div className="relative aspect-[16/10]">
-          <Image
-            src={noahPortrait}
-            alt="Noah Marcus"
-            fill
-            priority
-            sizes="(min-width: 768px) 48rem, 100vw"
-            className="object-cover"
-          />
-        </div>
-        <figcaption className="px-5 py-3 text-sm text-muted">
-          Noah Marcus
-        </figcaption>
+      <figure className="mt-8 max-w-sm">
+        <Image
+          src={noahPortrait}
+          alt="Noah Marcus"
+          width={1170}
+          height={1176}
+          priority
+          sizes="(min-width: 640px) 24rem, 100vw"
+          className="h-auto w-full rounded-3xl border border-line"
+        />
+        <figcaption className="mt-3 text-sm text-muted">Noah Marcus</figcaption>
       </figure>
 
       <div className="mt-10 max-w-prose space-y-6 text-lg leading-relaxed text-ink/90">
@@ -68,34 +65,31 @@ export default function StoryPage() {
         </p>
       </div>
 
-      {/* NOAH'S WORK — renders only once paintings are added to lib/content.ts */}
+      {/* NOAH'S WORK — masonry so each painting shows at its true proportions */}
       {noahWorks.length > 0 && (
-        <section className="mt-14">
+        <section className="mt-16">
           <h2 className="font-display text-2xl font-semibold md:text-3xl">
             Selected work
           </h2>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+          <div className="mt-6 gap-5 [column-fill:_balance] sm:columns-2">
             {noahWorks.map((work) => (
               <figure
-                key={work.title}
-                className="overflow-hidden rounded-2xl border border-line"
+                key={work.image}
+                className="mb-5 break-inside-avoid overflow-hidden rounded-2xl border border-line"
               >
-                <div className="relative aspect-[4/5] bg-ink/5">
-                  <Image
-                    src={work.image}
-                    alt={`${work.title} by Noah Marcus`}
-                    fill
-                    sizes="(min-width: 640px) 50vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
+                <Image
+                  src={work.image}
+                  alt={`${work.title} by Noah Marcus`}
+                  width={work.width}
+                  height={work.height}
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                  className="h-auto w-full"
+                />
                 <figcaption className="p-4">
                   <span className="font-display text-lg font-semibold italic">
                     {work.title}
                   </span>
-                  {work.year && (
-                    <span className="text-muted">, {work.year}</span>
-                  )}
+                  {work.year && <span className="text-muted">, {work.year}</span>}
                   {work.medium && (
                     <p className="text-sm text-muted">{work.medium}</p>
                   )}
