@@ -30,7 +30,7 @@ export default function DonatePage() {
         <figure className="mt-10 overflow-hidden rounded-3xl border border-line">
           <div className="relative aspect-[16/7]">
             <Image
-              src={noahWorks[3].image}
+              src={noahWorks[1].image}
               alt="Painting by Noah Marcus"
               fill
               sizes="(min-width: 1152px) 1088px, 100vw"

@@ -38,7 +38,7 @@ export default function PurposePage() {
         <figure className="mt-12 overflow-hidden rounded-3xl border border-line">
           <div className="relative aspect-[16/7]">
             <Image
-              src={noahWorks[0].image}
+              src={noahWorks[2].image}
               alt="Painting by Noah Marcus"
               fill
               sizes="(min-width: 1152px) 1088px, 100vw"

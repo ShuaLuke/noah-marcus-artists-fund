@@ -16,6 +16,7 @@ const config: Config = {
         ochre: "#E0A43B",
         teal: "#2A8F84",
         blue: "#3A6E99",
+        navy: "#22425C",
         plum: "#8C3F63",
         muted: "#6B635A",
         line: "#DED6C8",

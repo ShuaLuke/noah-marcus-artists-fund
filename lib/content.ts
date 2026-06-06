@@ -144,14 +144,15 @@ export const noahWorks: {
   medium?: string;
   note?: string;
 }[] = [
-  { title: "Untitled", image: "/noah-art/untitled-1.jpeg" },
-  { title: "Untitled", image: "/noah-art/untitled-2.jpeg" },
-  { title: "Untitled", image: "/noah-art/untitled-3.png" },
-  { title: "Untitled", image: "/noah-art/untitled-4.png" },
-  { title: "Untitled", image: "/noah-art/untitled-5.jpeg" },
-  { title: "Untitled", image: "/noah-art/untitled-6.jpeg" },
+  // Order matters: [0] is the homepage hero; banners reference specific indices.
+  { title: "Untitled", image: "/noah-art/untitled-2.jpeg" }, // [0] blue abstract — home hero
+  { title: "Untitled", image: "/noah-art/untitled-3.png" }, //  [1] blue seascape — donate banner
+  { title: "Untitled", image: "/noah-art/untitled-1.jpeg" }, // [2] vibrant — our purpose banner
+  { title: "Untitled", image: "/noah-art/untitled-6.jpeg" }, // [3] figurative
+  { title: "Untitled", image: "/noah-art/untitled-4.png" }, //  [4] teal/red — apply banner
+  { title: "Untitled", image: "/noah-art/untitled-5.jpeg" }, // [5] warm pastel
   {
-    title: "Priest",
+    title: "Priest", // [6]
     image: "/noah-art/priest.jpeg",
     note: "One of Noah's pointed responses to social injustice — depicting child-abusing clergy as monsters.",
   },

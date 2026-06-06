@@ -79,7 +79,7 @@ export default function Home() {
       </section>
 
       {/* QUOTE */}
-      <section className="border-y border-line bg-ink text-paper">
+      <section className="border-y border-line bg-navy text-paper">
         <div className="mx-auto max-w-4xl px-5 py-16 md:py-24 text-center">
           <blockquote className="font-display text-2xl font-medium leading-snug md:text-4xl">
             &ldquo;Art can be so turbulent at times for the creator. You never
@@ -87,7 +87,7 @@ export default function Home() {
             suddenly you&rsquo;re just enthralled in an idea or some desperate
             need to speak.&rdquo;
           </blockquote>
-          <cite className="mt-6 block not-italic text-coral">
+          <cite className="mt-6 block not-italic text-ochre">
             &mdash; Noah Marcus
           </cite>
         </div>
