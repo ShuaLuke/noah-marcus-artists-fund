@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { seo, board, featuredArtists, noahWorks } from "@/lib/content";
-import { cta } from "@/lib/styles";
+import { cta, eyebrow } from "@/lib/styles";
 
 export const metadata: Metadata = {
   title: seo.purpose.title,
@@ -15,9 +15,7 @@ export default function PurposePage() {
     <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <div>
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-coral">
-            Our Purpose
-          </p>
+          <p className={eyebrow}>Our Purpose</p>
           <h1 className="mt-3 font-display text-4xl font-semibold md:text-6xl">
             Noah&rsquo;s passion for art lives on.
           </h1>

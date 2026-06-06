@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { seo, faqs } from "@/lib/content";
-import { cta } from "@/lib/styles";
+import { cta, eyebrow } from "@/lib/styles";
 
 export const metadata: Metadata = {
   title: seo.faq.title,
@@ -12,9 +12,7 @@ export const metadata: Metadata = {
 export default function FaqPage() {
   return (
     <div className="mx-auto max-w-3xl px-5 py-16 md:py-24">
-      <p className="text-sm font-medium uppercase tracking-[0.2em] text-coral">
-        FAQ
-      </p>
+      <p className={eyebrow}>FAQ</p>
       <h1 className="mt-3 font-display text-4xl font-semibold md:text-6xl">
         Questions, answered.
       </h1>

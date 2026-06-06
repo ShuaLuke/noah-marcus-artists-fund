@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { seo, application, noahWorks } from "@/lib/content";
-import { cta } from "@/lib/styles";
+import { cta, eyebrow } from "@/lib/styles";
 
 export const metadata: Metadata = {
   title: seo.apply.title,
@@ -14,9 +14,7 @@ export default function ApplyPage() {
     <div className="mx-auto max-w-5xl px-5 py-16 md:py-24">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <div>
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-coral">
-            Apply
-          </p>
+          <p className={eyebrow}>Apply</p>
           <h1 className="mt-3 font-display text-4xl font-semibold md:text-6xl">
             Tell us about your work.
           </h1>

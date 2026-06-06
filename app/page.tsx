@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { noahWorks } from "@/lib/content";
-import { cta } from "@/lib/styles";
+import { cta, eyebrow } from "@/lib/styles";
 
 export default function Home() {
   const heroArt = noahWorks[0];
@@ -15,7 +15,7 @@ export default function Home() {
           }`}
         >
           <div>
-            <p className="animate-rise text-sm font-medium uppercase tracking-[0.2em] text-coral">
+            <p className={`animate-rise ${eyebrow}`}>
               DC &middot; Maryland &middot; Virginia
             </p>
             <h1 className="animate-rise font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl mt-4 max-w-4xl">

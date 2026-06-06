@@ -139,7 +139,7 @@ export default function DonateClient() {
       </div>
 
       {/* Backup methods */}
-      <div className="rounded-3xl bg-ink p-7 text-paper md:p-9">
+      <div className="rounded-3xl bg-navy p-7 text-paper md:p-9">
         <h2 className="font-display text-2xl font-semibold">Other ways to give</h2>
         <p className="mt-2 text-sm text-paper/70">
           Prefer a different app? Use any of these.

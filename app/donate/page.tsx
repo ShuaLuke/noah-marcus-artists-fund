@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { seo, featuredArtists, noahWorks } from "@/lib/content";
+import { eyebrow } from "@/lib/styles";
 import DonateClient from "@/components/DonateClient";
 
 export const metadata: Metadata = {
@@ -14,9 +15,7 @@ export default function DonatePage() {
     <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <div>
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-coral">
-            Donate
-          </p>
+          <p className={eyebrow}>Donate</p>
           <h1 className="mt-3 font-display text-4xl font-semibold md:text-6xl">
             Empower the next bold voice.
           </h1>

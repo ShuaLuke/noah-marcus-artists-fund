@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { seo, noahWorks, noahPortrait } from "@/lib/content";
-import { cta } from "@/lib/styles";
+import { cta, eyebrow } from "@/lib/styles";
 
 export const metadata: Metadata = {
   title: seo.story.title,
@@ -13,9 +13,7 @@ export const metadata: Metadata = {
 export default function StoryPage() {
   return (
     <article className="mx-auto max-w-3xl px-5 py-16 md:py-24">
-      <p className="text-sm font-medium uppercase tracking-[0.2em] text-coral">
-        Noah&rsquo;s Story
-      </p>
+      <p className={eyebrow}>Noah&rsquo;s Story</p>
       <h1 className="mt-3 font-display text-4xl font-semibold md:text-6xl">
         A life lived in bold color.
       </h1>
