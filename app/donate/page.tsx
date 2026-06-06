@@ -28,43 +28,45 @@ export default function DonatePage() {
 
       <DonateClient />
 
-      {/* THE ARTISTS YOU'RE SUPPORTING */}
-      <section className="mt-20">
-        <div className="hairline mb-12" />
-        <h2 className="font-display text-3xl font-semibold md:text-4xl">
-          The artists you&rsquo;re supporting
-        </h2>
-        <p className="mt-3 max-w-prose text-muted">
-          Your gift goes directly to emerging DMV artists like these — bold
-          voices taking a daring approach to their work.
-        </p>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          {featuredArtists.map((art) => (
-            <figure
-              key={art.name}
-              className="group overflow-hidden rounded-2xl border border-line"
-            >
-              <div className="relative aspect-[4/3] bg-ink/5">
-                <Image
-                  src={art.image}
-                  alt={`Artwork featuring ${art.name}`}
-                  fill
-                  sizes="(min-width: 640px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <figcaption className="p-5">
-                <span className="font-display text-lg font-semibold">
-                  {art.name}
-                </span>
-                <p className="mt-1 text-sm leading-relaxed text-muted">
-                  {art.blurb}
-                </p>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
+      {/* THE ARTISTS YOU'RE SUPPORTING — renders only once there are recipients */}
+      {featuredArtists.length > 0 && (
+        <section className="mt-20">
+          <div className="hairline mb-12" />
+          <h2 className="font-display text-3xl font-semibold md:text-4xl">
+            The artists you&rsquo;re supporting
+          </h2>
+          <p className="mt-3 max-w-prose text-muted">
+            Your gift goes directly to emerging DMV artists like these — bold
+            voices taking a daring approach to their work.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            {featuredArtists.map((art) => (
+              <figure
+                key={art.name}
+                className="group overflow-hidden rounded-2xl border border-line"
+              >
+                <div className="relative aspect-[4/3] bg-ink/5">
+                  <Image
+                    src={art.image}
+                    alt={`Artwork featuring ${art.name}`}
+                    fill
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <figcaption className="p-5">
+                  <span className="font-display text-lg font-semibold">
+                    {art.name}
+                  </span>
+                  <p className="mt-1 text-sm leading-relaxed text-muted">
+                    {art.blurb}
+                  </p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

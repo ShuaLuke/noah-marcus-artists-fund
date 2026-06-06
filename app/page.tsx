@@ -1,17 +1,23 @@
 import Link from "next/link";
 import Image from "next/image";
+import { noahWorks } from "@/lib/content";
 
 export default function Home() {
+  const heroArt = noahWorks[0];
   return (
     <>
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pt-20 pb-16 md:pt-28 md:pb-24 lg:grid-cols-[1.3fr_1fr]">
+        <div
+          className={`mx-auto grid max-w-6xl items-center gap-12 px-5 pt-20 pb-16 md:pt-28 md:pb-24 ${
+            heroArt ? "lg:grid-cols-[1.3fr_1fr]" : ""
+          }`}
+        >
           <div>
             <p className="animate-rise text-sm font-medium uppercase tracking-[0.2em] text-coral">
               DC &middot; Maryland &middot; Virginia
             </p>
-            <h1 className="animate-rise font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl mt-4">
+            <h1 className="animate-rise font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl mt-4 max-w-4xl">
               Celebrating artists
               <br />
               who explore color
@@ -39,23 +45,35 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Featured artwork from the community the Fund supports */}
-          <figure className="animate-rise relative mx-auto w-full max-w-sm">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-line shadow-xl shadow-ink/10">
-              <Image
-                src="/art/adam-reid.jpeg"
-                alt="Featured artwork by supported artist Adam Reid"
-                fill
-                priority
-                sizes="(min-width: 1024px) 24rem, 100vw"
-                className="object-cover"
-              />
-            </div>
-            <figcaption className="mt-3 text-center text-sm text-muted">
-              Work by Adam Reid, a supported artist
-            </figcaption>
-          </figure>
+          {/* Hero shows Noah's own artwork once added to noahWorks */}
+          {heroArt && (
+            <figure className="animate-rise relative mx-auto w-full max-w-sm">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-line shadow-xl shadow-ink/10">
+                <Image
+                  src={heroArt.image}
+                  alt={`${heroArt.title} by Noah Marcus`}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 24rem, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-3 text-center text-sm text-muted">
+                <span className="italic">{heroArt.title}</span>
+                {heroArt.year ? `, ${heroArt.year}` : ""} — Noah Marcus
+              </figcaption>
+            </figure>
+          )}
         </div>
+
+        {/* decorative color bars (shown until Noah's artwork is added) */}
+        {!heroArt && (
+          <div className="absolute -right-10 top-10 hidden gap-3 lg:flex">
+            <div className="h-72 w-6 rounded-full bg-coral/80" />
+            <div className="h-72 w-6 rounded-full bg-ochre/80 mt-12" />
+            <div className="h-72 w-6 rounded-full bg-teal/80 mt-24" />
+          </div>
+        )}
       </section>
 
       {/* QUOTE */}
@@ -107,25 +125,11 @@ export default function Home() {
       {/* WHO WE SUPPORT */}
       <section className="border-t border-line bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
-          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
-            <figure className="order-2 md:order-1">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-line">
-                <Image
-                  src="/art/yetunde-sapp.jpg"
-                  alt="Artist Yetunde Sapp with her paintings"
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <figcaption className="mt-3 text-sm text-muted">
-                Yetunde Sapp, surrounded by her work.
-              </figcaption>
-            </figure>
-            <div className="order-1 max-w-prose space-y-5 text-lg leading-relaxed text-ink/90 md:order-2">
-              <h2 className="font-display text-3xl font-semibold md:text-4xl">
-                Who we support
-              </h2>
+          <div className="grid gap-12 md:grid-cols-[1fr_2fr] md:gap-20">
+            <h2 className="font-display text-3xl font-semibold md:text-4xl">
+              Who we support
+            </h2>
+            <div className="max-w-prose space-y-5 text-lg leading-relaxed text-ink/90">
               <p>
                 We believe art has the power to transform lives, inspire change,
                 and bring people together. We are committed to supporting local

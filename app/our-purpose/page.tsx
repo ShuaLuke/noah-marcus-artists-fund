@@ -33,31 +33,33 @@ export default function PurposePage() {
         </div>
       </div>
 
-      {/* FEATURED ARTWORK — the work the Fund supports */}
-      <section className="mt-16 grid gap-4 sm:grid-cols-2">
-        {featuredArtists.map((art) => (
-          <figure
-            key={art.name}
-            className="group relative overflow-hidden rounded-2xl border border-line bg-ink/5"
-          >
-            <div className="relative aspect-[4/3]">
-              <Image
-                src={art.image}
-                alt={`Artwork featuring ${art.name}`}
-                fill
-                sizes="(min-width: 640px) 50vw, 100vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 to-transparent p-5 text-paper">
-              <span className="font-display text-lg font-semibold">
-                {art.name}
-              </span>
-              <p className="mt-1 text-sm text-paper/85">{art.blurb}</p>
-            </figcaption>
-          </figure>
-        ))}
-      </section>
+      {/* FEATURED ARTWORK — renders only once there are grant recipients */}
+      {featuredArtists.length > 0 && (
+        <section className="mt-16 grid gap-4 sm:grid-cols-2">
+          {featuredArtists.map((art) => (
+            <figure
+              key={art.name}
+              className="group relative overflow-hidden rounded-2xl border border-line bg-ink/5"
+            >
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src={art.image}
+                  alt={`Artwork featuring ${art.name}`}
+                  fill
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 to-transparent p-5 text-paper">
+                <span className="font-display text-lg font-semibold">
+                  {art.name}
+                </span>
+                <p className="mt-1 text-sm text-paper/85">{art.blurb}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </section>
+      )}
 
       {/* MEET THE BOARD */}
       <section className="mt-20">

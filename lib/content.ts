@@ -122,19 +122,14 @@ export const board = [
 ];
 
 // --- Featured artists --------------------------------------------------------
-// Artists the Fund has supported. Images live in /public/art.
-export const featuredArtists = [
-  {
-    name: "Yetunde Sapp",
-    image: "/art/yetunde-sapp.jpg",
-    blurb: "Surrounded by her vivid, figurative canvases — the kind of bold, color-driven work the Fund exists to champion.",
-  },
-  {
-    name: "Adam Reid",
-    image: "/art/adam-reid.jpeg",
-    blurb: "A striking, atmospheric piece that shows the daring approach to color and concept Noah celebrated.",
-  },
-];
+// Grant recipients to highlight. The Fund has not awarded any grants yet, so
+// this is intentionally empty — sections that use it stay hidden until there
+// are real supported artists to feature.
+export const featuredArtists: {
+  name: string;
+  image: string;
+  blurb: string;
+}[] = [];
 
 // --- Noah's own artwork ------------------------------------------------------
 // TO FEATURE NOAH'S PAINTINGS: drop image files in /public/noah-art and add an
