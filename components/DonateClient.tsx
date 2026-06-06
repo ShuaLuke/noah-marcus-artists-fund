@@ -97,7 +97,7 @@ export default function DonateClient() {
                 }}
                 className={`rounded-xl border px-4 py-3 font-medium transition-colors ${
                   active
-                    ? "border-coral bg-coral text-paper"
+                    ? "border-blue bg-blue text-paper"
                     : "border-line hover:border-ink"
                 }`}
               >
@@ -132,7 +132,7 @@ export default function DonateClient() {
         <button
           onClick={handleDonate}
           disabled={loading}
-          className="mt-6 w-full rounded-full bg-coral py-3.5 font-medium text-paper transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0"
+          className="mt-6 w-full rounded-full bg-gradient-to-r from-blue to-plum py-3.5 font-semibold text-paper transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0"
         >
           {loading ? "Redirecting…" : "Donate securely"}
         </button>

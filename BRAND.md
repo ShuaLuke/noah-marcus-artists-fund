@@ -30,7 +30,7 @@ Drawn directly from Noah's paintings. Hex values are the canonical tokens.
 |---|---|---|
 | `paper` | `#F7F3EC` | Page background (warm off-white) |
 | `ink` | `#1A1714` | Primary text |
-| `coral` | `#D8463A` | **Primary action & signature accent** |
+| `coral` | `#D8463A` | **Signature text accent** (eyebrows, links, highlights) |
 | `ochre` | `#E0A43B` | Warm accent, attribution text |
 | `teal` | `#2A8F84` | Secondary accent, success states |
 | `blue` | `#3A6E99` | Noah's signature blue |
@@ -42,8 +42,9 @@ Drawn directly from Noah's paintings. Hex values are the canonical tokens.
 | `line` | `#DED6C8` | Borders, hairlines |
 
 **Rules**
-- `coral` is the single accent for primary actions and highlights. Don't
-  introduce new accent colors.
+- Primary buttons use the **blue→pink gradient** (`from-blue to-plum`) — an
+  Apple-style fade echoing the sunset sky. `coral` is the text accent (eyebrows,
+  links, highlights), not buttons. Don't introduce new accent colors.
 - Use `blue`, `navy`, and `plum` for atmosphere (gradients, bands), not for body
   text.
 - Dark bands (`navy`, `ink`, gradients) always use `paper` text.
@@ -85,7 +86,7 @@ never run it at full strength behind body copy.
 
 | Variant | Style | When |
 |---|---|---|
-| `cta.primary` | Coral pill, paper text | The one most important action |
+| `cta.primary` | Blue→pink gradient pill, paper text | The one most important action |
 | `cta.secondary` | Ink outline | Paired with a primary |
 | `cta.onDark` | Paper pill | On navy / teal / ink panels |
 

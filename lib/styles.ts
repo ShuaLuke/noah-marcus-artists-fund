@@ -8,8 +8,10 @@
 // that one line updates every primary button site-wide.
 export const cta = {
   // Primary action (most important thing on the page).
+  // Blue→pink gradient (an "Apple-style" fade) echoing the sunset sky. Kept dark
+  // enough end-to-end so the white label stays legible.
   primary:
-    "inline-block rounded-full bg-coral px-7 py-3 font-medium text-paper transition-transform hover:-translate-y-0.5",
+    "inline-block rounded-full bg-gradient-to-r from-blue to-plum px-7 py-3 font-semibold text-paper transition-transform hover:-translate-y-0.5",
   // Secondary action (paired with a primary).
   secondary:
     "inline-block rounded-full border border-ink px-7 py-3 font-medium transition-colors hover:bg-ink hover:text-paper",

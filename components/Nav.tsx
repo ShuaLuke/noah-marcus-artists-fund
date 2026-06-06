@@ -31,7 +31,7 @@ export default function Nav() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="rounded-full bg-coral px-4 py-1.5 font-medium text-paper transition-transform hover:-translate-y-0.5"
+                    className="rounded-full bg-gradient-to-r from-blue to-plum px-4 py-1.5 font-semibold text-paper transition-transform hover:-translate-y-0.5"
                   >
                     {item.label}
                   </Link>

@@ -134,7 +134,7 @@ export default function DesignPage() {
       {/* BUTTONS */}
       <Section title="Buttons">
         <div className="flex flex-wrap items-center gap-4">
-          <span className={cta.primary}>Primary (coral)</span>
+          <span className={cta.primary}>Primary (blue → pink)</span>
           <span className={cta.secondary}>Secondary (outline)</span>
         </div>
         <div className="mt-4 flex flex-wrap items-center gap-4 rounded-2xl bg-navy p-6">
