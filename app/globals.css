@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: theme("colors.paper");
+  color: theme("colors.ink");
+  /* subtle paper grain */
+  background-image: radial-gradient(theme("colors.line") 0.5px, transparent 0.5px);
+  background-size: 22px 22px;
+  background-attachment: fixed;
+}
+
+::selection {
+  background: theme("colors.coral");
+  color: theme("colors.paper");
+}
+
+/* Display headings get optical sizing + tighter tracking */
+.font-display {
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+}
+
+/* Decorative hairline used between sections */
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    theme("colors.line"),
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
