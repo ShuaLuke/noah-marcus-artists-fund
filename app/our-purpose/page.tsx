@@ -22,12 +22,12 @@ export default function PurposePage() {
           <div className="mt-8 max-w-prose space-y-5 text-lg leading-relaxed text-ink/90">
             <p>
               The Noah Marcus Artists Fund exists to celebrate, recognize, and
-              empower outspoken, emerging artists within the DMV area by
+              empower outspoken, emerging painters in Washington, DC by
               providing the financial assistance they need to actualize their
               visions.
             </p>
             <p>
-              We seek out artists who not only have something to say, but take a
+              We seek out painters who not only have something to say, but take a
               daring approach in saying it — and who, like Noah, explore color
               courageously.
             </p>
@@ -103,7 +103,7 @@ export default function PurposePage() {
                 <h3 className="font-display text-xl font-semibold">
                   {member.name}
                 </h3>
-                <p className="text-sm text-coral">{member.role}</p>
+                <p className="text-sm text-roseDeep">{member.role}</p>
                 <p className="mt-3 text-sm leading-relaxed text-muted">
                   {member.bio}
                 </p>

@@ -9,20 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Palette drawn from Noah's paintings — his blues, teals, coral,
-        // ochre, and plum recur across his work.
-        paper: "#F7F3EC",
-        ink: "#1A1714",
-        coral: "#D8463A",
-        ochre: "#E0A43B",
-        teal: "#2A8F84",
-        blue: "#3A6E99",
-        navy: "#22425C",
-        plum: "#8C3F63",
-        sky: "#BCDCEF",
-        blush: "#E8A0B6",
-        muted: "#6B635A",
-        line: "#DED6C8",
+        // Palette grounded in Noah's hero wash (pink → lavender → light blue).
+        // No coral — the accent (rose) is drawn from the wash so it harmonizes.
+        paper: "#FBFAF8", // soft off-white (non-gradient sections)
+        ink: "#1A1714", // near-black headlines / body
+        blue: "#CDE0EE", // light blue (from the gradient's blue end)
+        blueDeep: "#5B8FB0", // deeper blue for links / text-on-light / contrast
+        rose: "#D97A8E", // ACCENT — harmonizes with the wash
+        roseDeep: "#C76B7E", // deeper rose for hover / accessible accent text
+        muted: "#6B635A", // warm-gray secondary text
+        line: "#E7E2DB", // hairlines / borders
       },
       fontFamily: {
         display: ["var(--font-fraunces)", "Georgia", "serif"],

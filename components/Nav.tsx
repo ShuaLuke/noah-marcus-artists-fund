@@ -18,7 +18,7 @@ export default function Nav() {
             className="font-display text-lg font-semibold tracking-tight"
             onClick={() => setOpen(false)}
           >
-            Noah Marcus<span className="text-coral">.</span>
+            Noah Marcus<span className="text-roseDeep">.</span>
           </Link>
 
           {/* Desktop */}
@@ -31,7 +31,7 @@ export default function Nav() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="rounded-full bg-gradient-to-r from-blue to-plum px-4 py-1.5 font-semibold text-paper transition-transform hover:-translate-y-0.5"
+                    className="rounded-full bg-gradient-to-r from-blueDeep to-roseDeep px-4 py-1.5 font-semibold text-paper transition-transform hover:-translate-y-0.5"
                   >
                     {item.label}
                   </Link>
@@ -41,8 +41,8 @@ export default function Nav() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`transition-colors hover:text-coral ${
-                    active ? "text-coral" : "text-ink"
+                  className={`transition-colors hover:text-roseDeep ${
+                    active ? "text-roseDeep" : "text-ink"
                   }`}
                 >
                   {item.label}
@@ -89,7 +89,7 @@ export default function Nav() {
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={`py-3 text-base border-b border-line/60 last:border-0 ${
-                  pathname === item.href ? "text-coral" : "text-ink"
+                  pathname === item.href ? "text-roseDeep" : "text-ink"
                 }`}
               >
                 {item.label}

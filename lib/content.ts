@@ -8,6 +8,11 @@ export const site = {
   name: "Noah Marcus Artists Fund",
   url: "https://noahartistsfund.org", // update once domain is connected
   instagram: "https://instagram.com/noahmarcusartistfund",
+  // ⚠️ CONFIRM before launch that this is the right public address.
+  email: "noahmarcusartistsfund@gmail.com",
+  // 501(c)(3) EIN. Leave null until the Fund provides it; it stays hidden while
+  // null, then displays on the Donate page so donors can verify.
+  ein: null as string | null,
   // Set to null to hide the banner. Edit text/href to change it.
   banner: {
     text: "The Noah Marcus Artists Fund is now accepting applications for our inaugural cohort.",
@@ -16,37 +21,54 @@ export const site = {
   } as { text: string; cta: string; href: string } | null,
 };
 
+// --- Grant details (finalized) ----------------------------------------------
+export const grant = {
+  amountDisplay: "up to $5,000", // internal range $2,000–$5,000
+  perYear: "3–4", // grants awarded each year
+  deadline: "Fall 2026",
+  commission: "0%", // the Fund takes no cut of exhibition sales
+  // The model — this is the differentiator; feature it.
+  model:
+    "Grant winners are funded to create new work, then mount a group exhibition together. At the show, painters may sell their work and keep 100% of sales — the Fund takes no commission.",
+  // Front-page spend examples (confirm/adjust categories with the Fund).
+  funds: [
+    "Paint, canvases, and materials to make new work",
+    "Studio space to create in",
+    "Framing and preparation for the exhibition",
+  ],
+};
+
 // --- SEO: per-page title + meta description (straight from your copy doc) ---
 export const seo = {
   home: {
     title: "Noah Marcus Artists Fund",
     description:
-      "Inspired by Noah Marcus's life, we provide grants to help young artists in the DC, Maryland, and Virginia area pursue their passion and share their voices through creative work.",
+      "Inspired by Noah Marcus, we award grants to painters ages 18–25 in Washington, DC to create new work and show it together in a group exhibition.",
   },
   story: {
     title: "Noah's Story - Noah Marcus Artists Fund",
     description:
-      "Discover the life of Noah Marcus and how his artistic passion inspired a mission to support young artists in the DC, Maryland, and Virginia area through the fund created in his memory.",
+      "Discover the life of Noah Marcus and how his passion for painting inspired a fund supporting young painters in Washington, DC, created in his memory.",
   },
   purpose: {
     title: "Our Purpose - Noah Marcus Artists Fund",
     description:
-      "Noah's passion for art lives on. Read his story and how his legacy now fuels the dreams of young artists across the DC, Maryland, and Virginia area through our grants program.",
+      "Noah's passion for painting lives on. See how his legacy now fuels young painters in Washington, DC through grants and a shared group exhibition.",
   },
   donate: {
     title: "Donate - Noah Marcus Artists Fund",
     description:
-      "Support the Noah Marcus Artists Fund and empower artists in the DC, Maryland, and Virginia area through grants that honor Noah's legacy and passion for creative expression.",
+      "Support the Noah Marcus Artists Fund and empower painters ages 18–25 in Washington, DC through grants that honor Noah's legacy and love of color.",
   },
   apply: {
     title: "Apply - Noah Marcus Artists Fund",
     description:
-      "Calling young artists in the DC, Maryland, and Virginia area! Apply for a grant from the Noah Marcus Artists Fund to support your artistic journey and creative growth.",
+      "Painters ages 18–25 in Washington, DC: apply for a grant of up to $5,000 to create new work and exhibit it with the Noah Marcus Artists Fund.",
   },
   faq: {
     title: "FAQ - Noah Marcus Artists Fund",
     description:
-      "Answers to common questions about the Noah Marcus Artists Fund — who can apply, how grants work, and how to support artists in the DC, Maryland, and Virginia area.",
+      "Answers about the Noah Marcus Artists Fund — who can apply (painters 18–25 in Washington, DC), how grants and the group exhibition work, and how to give.",
   },
 };
 
@@ -105,7 +127,7 @@ export const board = [
     name: "Sophia Marcus",
     role: "Board member · Noah's sister",
     photo: "/board/sophia-marcus.png",
-    bio: "Noah's little sister and a fifth-generation native Washingtonian with a passion for equity, inclusivity, and justice. Sophia earned her B.A. in Economics and French & Francophone Studies from the College of William & Mary and is pursuing a master's in public policy at the University of Virginia. She helped share Noah's work with the world — including the sale of his first piece — and now serves the DMV artist community in his honor.",
+    bio: "Noah's little sister and a fifth-generation native Washingtonian with a passion for equity, inclusivity, and justice. Sophia earned her B.A. in Economics and French & Francophone Studies from the College of William & Mary and is pursuing a master's in public policy at the University of Virginia. She helped share Noah's work with the world — including the sale of his first piece — and now serves Washington, DC's painting community in his honor.",
   },
   {
     name: "Josh Klugman",
@@ -169,19 +191,27 @@ export const noahPortrait = "/noah-art/noah-portrait.jpg";
 export const faqs = [
   {
     q: "Who is eligible to apply?",
-    a: "Emerging artists based in the DC, Maryland, and Virginia (DMV) area. We especially encourage painters and visual artists who take a bold, courageous approach to color and have something to say through their work.",
+    a: "Painters ages 18–25 based in Washington, DC. We especially encourage painters who take a bold, courageous approach to color and have something urgent to say through their work — like Noah.",
   },
   {
-    q: "What can the grant be used for?",
-    a: "Grants are intended to help artists actualize their vision — materials, studio time, exhibition costs, or other expenses that directly support a creative project.",
+    q: "What does the grant fund?",
+    a: "The grant funds painters to create new work for a group exhibition that the cohort of winners mounts together. It can go toward paint, canvases, and materials; studio space; and framing and preparation for the show.",
   },
   {
-    q: "How do I apply?",
-    a: "Submit an application through the form on our Apply page. Your application helps us get to know you and your work, and it's the first step toward receiving funding.",
+    q: "Can I sell my work — and does the Fund take a cut?",
+    a: "Yes, you can sell your work at the group exhibition, and you keep 100% of your sales. The Fund takes no commission.",
+  },
+  {
+    q: "How much is the grant, and how many are awarded?",
+    a: "Grants are up to $5,000, with 3–4 awarded each year.",
+  },
+  {
+    q: "How do I apply, and what happens next?",
+    a: "Submit an application through the form on our Apply page. You'll receive confirmation that we've received it, and the Fund will follow up with you directly.",
   },
   {
     q: "When is the application deadline?",
-    a: "Please check the Apply page for current cycle dates. (Update this answer with your inaugural deadline before launch.)",
+    a: "The current application deadline is Fall 2026.",
   },
   {
     q: "Is the Fund a registered nonprofit?",

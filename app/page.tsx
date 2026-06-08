@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { noahWorks } from "@/lib/content";
+import { noahWorks, grant, site } from "@/lib/content";
 import { cta, eyebrow } from "@/lib/styles";
 
 export default function Home() {
@@ -15,20 +15,18 @@ export default function Home() {
           }`}
         >
           <div>
-            <p className={`animate-rise ${eyebrow}`}>
-              DC &middot; Maryland &middot; Virginia
-            </p>
+            <p className={`animate-rise ${eyebrow}`}>Washington, DC</p>
             <h1 className="animate-rise font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl mt-4 max-w-4xl">
-              Celebrating artists
+              Celebrating painters
               <br />
               who explore color
               <br />
-              <span className="text-coral">courageously.</span>
+              <span className="text-roseDeep">courageously.</span>
             </h1>
             <p className="animate-rise mt-7 max-w-xl text-lg text-muted">
-              The Noah Marcus Artists Fund provides grants to bold, emerging
-              artists in the DMV area — helping them actualize their vision and
-              share their voices.
+              The Noah Marcus Artists Fund awards grants to bold, emerging
+              painters ages 18–25 in Washington, DC — funding them to create new
+              work and show it together.
             </p>
             <div className="animate-rise mt-9 flex flex-wrap gap-3">
               <Link href="/donate" className={cta.primary}>
@@ -64,17 +62,16 @@ export default function Home() {
         {/* decorative color bars (shown until Noah's artwork is added) */}
         {!heroArt && (
           <div className="absolute -right-10 top-10 hidden gap-3 lg:flex">
-            <div className="h-72 w-6 rounded-full bg-coral/80" />
-            <div className="h-72 w-6 rounded-full bg-ochre/80 mt-12" />
-            <div className="h-72 w-6 rounded-full bg-teal/80 mt-24" />
-            <div className="h-72 w-6 rounded-full bg-blue/80 mt-36" />
-            <div className="h-72 w-6 rounded-full bg-plum/80 mt-48" />
+            <div className="h-72 w-6 rounded-full bg-rose/80" />
+            <div className="h-72 w-6 rounded-full bg-blue mt-12" />
+            <div className="h-72 w-6 rounded-full bg-roseDeep/80 mt-24" />
+            <div className="h-72 w-6 rounded-full bg-blueDeep/80 mt-36" />
           </div>
         )}
       </section>
 
       {/* QUOTE */}
-      <section className="border-y border-line bg-gradient-to-br from-navy to-plum text-paper">
+      <section className="border-y border-line bg-gradient-to-br from-blue to-rose text-ink">
         <div className="mx-auto max-w-4xl px-5 py-16 md:py-24 text-center">
           <blockquote className="font-display text-2xl font-medium leading-snug md:text-4xl">
             &ldquo;Art can be so turbulent at times for the creator. You never
@@ -82,7 +79,7 @@ export default function Home() {
             suddenly you&rsquo;re just enthralled in an idea or some desperate
             need to speak.&rdquo;
           </blockquote>
-          <cite className="mt-6 block not-italic text-ochre">
+          <cite className="mt-6 block not-italic font-medium text-roseDeep">
             &mdash; Noah Marcus
           </cite>
         </div>
@@ -97,12 +94,12 @@ export default function Home() {
           <div className="max-w-prose space-y-5 text-lg leading-relaxed text-ink/90">
             <p>
               The mission of the Noah Marcus Artists Fund is to celebrate,
-              recognize, and empower outspoken, emerging artists within the
-              D.C., Maryland, and Virginia (DMV) area by providing financial
-              assistance that enables them to actualize their visions.
+              recognize, and empower outspoken, emerging painters in Washington,
+              DC by providing the financial assistance they need to actualize
+              their visions.
             </p>
             <p>
-              With Noah&rsquo;s influence in mind, the Fund encourages artists
+              With Noah&rsquo;s influence in mind, the Fund encourages painters
               who not only have something to say, but are taking a daring
               approach in saying it. Noah&rsquo;s uniquely bold use of color
               allowed him to express his beliefs, his convictions, and his
@@ -111,7 +108,7 @@ export default function Home() {
             </p>
             <Link
               href="/our-purpose"
-              className="inline-block font-medium text-coral underline decoration-2 underline-offset-4 hover:text-ink transition-colors"
+              className="inline-block font-medium text-roseDeep underline decoration-2 underline-offset-4 hover:text-ink transition-colors"
             >
               Learn more about our purpose &rarr;
             </Link>
@@ -129,13 +126,13 @@ export default function Home() {
             <div className="max-w-prose space-y-5 text-lg leading-relaxed text-ink/90">
               <p>
                 We believe art has the power to transform lives, inspire change,
-                and bring people together. We are committed to supporting local
-                painters who are pushing boundaries, challenging norms, and
+                and bring people together. We support painters ages 18–25 in
+                Washington, DC who are pushing boundaries, challenging norms, and
                 creating innovative, impactful work.
               </p>
               <Link
                 href="/apply"
-                className="inline-block font-medium text-coral underline decoration-2 underline-offset-4 hover:text-ink transition-colors"
+                className="inline-block font-medium text-roseDeep underline decoration-2 underline-offset-4 hover:text-ink transition-colors"
               >
                 Apply for a grant &rarr;
               </Link>
@@ -144,20 +141,118 @@ export default function Home() {
         </div>
       </section>
 
+      {/* HOW IT WORKS — the exhibition model (our differentiator) */}
+      <section className="border-t border-line">
+        <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
+          <p className={eyebrow}>How the grant works</p>
+          <h2 className="mt-3 max-w-3xl font-display text-3xl font-semibold md:text-4xl">
+            Funded to create new work — then show it together.
+          </h2>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink/90">
+            {grant.model}
+          </p>
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                k: "01",
+                t: "Get funded",
+                d: `A grant of ${grant.amountDisplay} to make new work.`,
+              },
+              {
+                k: "02",
+                t: "Create",
+                d: "Paint with studio space and materials covered.",
+              },
+              {
+                k: "03",
+                t: "Exhibit together",
+                d: "Show your work in a group exhibition with the cohort.",
+              },
+              {
+                k: "04",
+                t: "Keep 100%",
+                d: "Sell your work and keep every dollar — no commission.",
+              },
+            ].map((s) => (
+              <div
+                key={s.k}
+                className="rounded-2xl border border-line bg-paper p-6"
+              >
+                <div className="font-display text-2xl font-semibold text-roseDeep">
+                  {s.k}
+                </div>
+                <h3 className="mt-2 font-display text-lg font-semibold">
+                  {s.t}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{s.d}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 grid gap-10 md:grid-cols-[1.2fr_1fr]">
+            <div>
+              <h3 className="font-display text-xl font-semibold">
+                What the grant covers
+              </h3>
+              <ul className="mt-4 space-y-2 text-ink/90">
+                {grant.funds.map((f) => (
+                  <li key={f} className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-roseDeep" />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <dl className="grid grid-cols-3 gap-4 self-start rounded-2xl border border-line bg-blue/30 p-6 text-center">
+              <div>
+                <dt className="text-xs uppercase tracking-widest text-muted">
+                  Amount
+                </dt>
+                <dd className="mt-1 font-display text-lg font-semibold">
+                  {grant.amountDisplay}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-xs uppercase tracking-widest text-muted">
+                  Per year
+                </dt>
+                <dd className="mt-1 font-display text-lg font-semibold">
+                  {grant.perYear}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-xs uppercase tracking-widest text-muted">
+                  Deadline
+                </dt>
+                <dd className="mt-1 font-display text-lg font-semibold">
+                  {grant.deadline}
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
       {/* JOIN OUR CAUSE */}
       <section className="mx-auto max-w-6xl px-5 pb-24">
-        <div className="rounded-3xl bg-gradient-to-br from-blue to-teal px-8 py-14 text-paper md:px-16 md:py-20">
+        <div className="rounded-3xl bg-gradient-to-br from-blue to-rose px-8 py-14 text-ink md:px-16 md:py-20">
           <h2 className="font-display text-3xl font-semibold md:text-5xl max-w-2xl">
             Join our cause.
           </h2>
-          <p className="mt-5 max-w-xl text-lg text-paper/90">
+          <p className="mt-5 max-w-xl text-lg text-ink/80">
             Your contribution — through gifts, purchases, or simply spreading
             the word — ensures Noah&rsquo;s legacy leaves a lasting impact on the
-            lives and work of artists across the DMV area.
+            lives and work of painters in Washington, DC.
           </p>
-          <Link href="/donate" className={`mt-8 ${cta.onDark}`}>
-            Donate today
-          </Link>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/donate" className={cta.primary}>
+              Donate today
+            </Link>
+            <a href={`mailto:${site.email}`} className={cta.secondary}>
+              Get in touch
+            </a>
+          </div>
         </div>
       </section>
     </>

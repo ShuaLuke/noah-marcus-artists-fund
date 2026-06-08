@@ -10,9 +10,12 @@ guide lives at **`/design`**.
 
 ## 1. Foundation
 
-**Mission.** To celebrate, recognize, and empower outspoken, emerging artists in
-the DC, Maryland, and Virginia (DMV) area — providing the financial assistance
-they need to actualize their visions.
+**Mission.** To celebrate, recognize, and empower outspoken, emerging painters
+ages 18–25 in Washington, DC — funding them to create new work and show it
+together in a group exhibition (where they sell their work and keep 100%).
+
+**Audience (hard criteria).** Painters, ages 18–25, based in Washington, DC. Use
+"painters" (not "artists") and "Washington, DC" (never "DMV") everywhere.
 
 **Voice & tone.** Warm, bold, and sincere. We honor Noah's memory without being
 somber. We champion courage in art. Plain language, active voice, no jargon.
@@ -24,30 +27,28 @@ the brand does too.
 
 ## 2. Color
 
-Drawn directly from Noah's paintings. Hex values are the canonical tokens.
+Grounded in Noah's hero wash (pink → lavender → light blue). **No coral** — the
+accent (rose) is drawn from the wash so it harmonizes. Hex values are the
+canonical tokens.
 
 | Token | Hex | Use |
 |---|---|---|
-| `paper` | `#F7F3EC` | Page background (warm off-white) |
-| `ink` | `#1A1714` | Primary text |
-| `coral` | `#D8463A` | **Signature text accent** (eyebrows, links, highlights) |
-| `ochre` | `#E0A43B` | Warm accent, attribution text |
-| `teal` | `#2A8F84` | Secondary accent, success states |
-| `blue` | `#3A6E99` | Noah's signature blue |
-| `navy` | `#22425C` | Deep sky — banner, quote band |
-| `plum` | `#8C3F63` | Twilight accent |
-| `sky` | `#BCDCEF` | Sunset sky (light) |
-| `blush` | `#E8A0B6` | Sunset pink (cloud wisps) |
+| `paper` | `#FBFAF8` | Page background (soft off-white) |
+| `ink` | `#1A1714` | Headlines & body text |
+| `blue` | `#CDE0EE` | Light blue fills (from the wash) |
+| `blueDeep` | `#5B8FB0` | Links, deep accents, button fills |
+| `rose` | `#D97A8E` | Accent (from the wash) |
+| `roseDeep` | `#C76B7E` | Accent text, hover, eyebrows |
 | `muted` | `#6B635A` | Secondary text |
-| `line` | `#DED6C8` | Borders, hairlines |
+| `line` | `#E7E2DB` | Borders, hairlines |
 
 **Rules**
-- Primary buttons use the **blue→pink gradient** (`from-blue to-plum`) — an
-  Apple-style fade echoing the sunset sky. `coral` is the text accent (eyebrows,
-  links, highlights), not buttons. Don't introduce new accent colors.
-- Use `blue`, `navy`, and `plum` for atmosphere (gradients, bands), not for body
-  text.
-- Dark bands (`navy`, `ink`, gradients) always use `paper` text.
+- Primary buttons use the **blue→pink gradient** (`from-blueDeep to-roseDeep`) —
+  an Apple-style fade echoing the sunset sky. `roseDeep` is the text accent
+  (eyebrows, links, highlights). Don't introduce new accent colors (no coral).
+- **Accessibility:** `blue` and `rose` are light — never put white/light text on
+  them. Body text is `ink`; accents use `roseDeep`/`blueDeep`. Colored blocks use
+  a pale fill with `ink` text, or a deep gradient with `paper` text.
 
 ---
 
@@ -68,14 +69,14 @@ never run it at full strength behind body copy.
 - **Display:** Fraunces (serif) — headings, the wordmark, pull quotes. Semibold,
   tight tracking.
 - **Body:** Hanken Grotesk (sans) — everything else.
-- **Eyebrow:** uppercase, letter-spaced, `coral` — sits above headings
+- **Eyebrow:** uppercase, letter-spaced, `roseDeep` — sits above headings
   (`eyebrow` in `lib/styles.ts`).
 
 ---
 
 ## 5. Logo & wordmark
 
-- Text lockup: **Noah Marcus.** with the period in `coral`.
+- Text lockup: **Noah Marcus.** with the period in `roseDeep`.
 - Full wordmark: [`/public/logo.png`](public/logo.png) — "The Noah Marcus Artist
   Fund."
 - Give it clear space; place on `paper` or a light area of the sky wash.
@@ -86,7 +87,7 @@ never run it at full strength behind body copy.
 
 | Variant | Style | When |
 |---|---|---|
-| `cta.primary` | Blue→pink gradient pill, paper text | The one most important action |
+| `cta.primary` | Blue→pink gradient pill (`from-blueDeep to-roseDeep`), paper text | The one most important action |
 | `cta.secondary` | Ink outline | Paired with a primary |
 | `cta.onDark` | Paper pill | On navy / teal / ink panels |
 
@@ -119,5 +120,6 @@ One primary per view. To change the primary color globally, edit the single
 
 - ✅ Lead with Noah's color. ✅ One primary action per page. ✅ Keep the sunset at
   page tops.
-- ❌ New accent colors. ❌ Mixing coral and ink as "primary." ❌ Text over
+- ❌ Coral or new accent colors. ❌ "DMV"/Maryland/Virginia, or "artists" for
+  eligibility (use painters, Washington, DC). ❌ Light text on pale fills. ❌ Text over
   paintings. ❌ Somber, corporate tone.

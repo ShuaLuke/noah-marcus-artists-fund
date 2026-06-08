@@ -24,7 +24,7 @@ export default function FaqPage() {
               <span className="font-display text-xl font-medium">
                 {item.q}
               </span>
-              <span className="shrink-0 text-2xl text-coral transition-transform group-open:rotate-45">
+              <span className="shrink-0 text-2xl text-roseDeep transition-transform group-open:rotate-45">
                 +
               </span>
             </summary>

@@ -9,18 +9,14 @@ export const metadata: Metadata = {
 };
 
 const palette = [
-  { name: "paper", hex: "#F7F3EC", use: "Page background", light: true },
-  { name: "ink", hex: "#1A1714", use: "Primary text" },
-  { name: "coral", hex: "#D8463A", use: "Primary action · signature accent" },
-  { name: "ochre", hex: "#E0A43B", use: "Warm accent · attribution", light: true },
-  { name: "teal", hex: "#2A8F84", use: "Secondary accent · success" },
-  { name: "blue", hex: "#3A6E99", use: "Noah's signature blue" },
-  { name: "navy", hex: "#22425C", use: "Deep sky · banner · quote band" },
-  { name: "plum", hex: "#8C3F63", use: "Twilight accent" },
-  { name: "sky", hex: "#BCDCEF", use: "Sunset sky (light)", light: true },
-  { name: "blush", hex: "#E8A0B6", use: "Sunset pink (cloud wisps)", light: true },
+  { name: "paper", hex: "#FBFAF8", use: "Page background", light: true },
+  { name: "ink", hex: "#1A1714", use: "Headlines · body text" },
+  { name: "blue", hex: "#CDE0EE", use: "Light blue fills (from the wash)", light: true },
+  { name: "blueDeep", hex: "#5B8FB0", use: "Links · deep accents · button fills" },
+  { name: "rose", hex: "#D97A8E", use: "Accent (from the wash)" },
+  { name: "roseDeep", hex: "#C76B7E", use: "Accent text · hover · eyebrows" },
   { name: "muted", hex: "#6B635A", use: "Secondary text" },
-  { name: "line", hex: "#DED6C8", use: "Borders · hairlines", light: true },
+  { name: "line", hex: "#E7E2DB", use: "Borders · hairlines", light: true },
 ];
 
 function Section({
@@ -118,15 +114,15 @@ export default function DesignPage() {
             </div>
             <p className="mt-2 max-w-prose text-lg leading-relaxed">
               The Noah Marcus Artists Fund provides grants to bold, emerging
-              artists in the DMV area — helping them actualize their vision and
-              share their voices.
+              painters ages 18–25 in Washington, DC — funding them to create new
+              work and show it together.
             </p>
           </div>
           <div className="rounded-2xl border border-line p-6">
             <div className="text-xs uppercase tracking-widest text-muted">
               Eyebrow label
             </div>
-            <p className={`mt-2 ${eyebrow}`}>DC · Maryland · Virginia</p>
+            <p className={`mt-2 ${eyebrow}`}>Washington, DC</p>
           </div>
         </div>
       </Section>
@@ -137,10 +133,10 @@ export default function DesignPage() {
           <span className={cta.primary}>Primary (blue → pink)</span>
           <span className={cta.secondary}>Secondary (outline)</span>
         </div>
-        <div className="mt-4 flex flex-wrap items-center gap-4 rounded-2xl bg-navy p-6">
+        <div className="mt-4 flex flex-wrap items-center gap-4 rounded-2xl bg-blueDeep p-6">
           <span className={cta.onDark}>On dark (paper)</span>
-          <span className="text-sm text-paper/70">
-            Used on navy / teal / ink panels.
+          <span className="text-sm text-paper/80">
+            Used on deep-blue / colored panels.
           </span>
         </div>
       </Section>
@@ -150,7 +146,7 @@ export default function DesignPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="flex items-center justify-center rounded-2xl border border-line bg-paper p-8">
             <span className="font-display text-2xl font-semibold">
-              Noah Marcus<span className="text-coral">.</span>
+              Noah Marcus<span className="text-roseDeep">.</span>
             </span>
           </div>
           <div className="flex items-center justify-center rounded-2xl border border-line bg-paper p-8">
@@ -189,7 +185,7 @@ export default function DesignPage() {
                 <div className="font-display text-lg font-semibold">
                   Board member
                 </div>
-                <div className="text-sm text-coral">Role / title</div>
+                <div className="text-sm text-roseDeep">Role / title</div>
                 <p className="mt-2 text-sm text-muted">
                   Bio card pattern used on Our Purpose.
                 </p>

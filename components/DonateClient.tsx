@@ -9,9 +9,9 @@ function StatusNotice() {
   const status = params.get("status");
   if (status === "success") {
     return (
-      <div className="mb-8 rounded-2xl border border-teal bg-teal/10 px-6 py-4 text-teal">
-        Thank you for your generosity — your donation directly supports artists
-        in the DMV area.
+      <div className="mb-8 rounded-2xl border border-blueDeep bg-blue/40 px-6 py-4 text-ink">
+        Thank you for your generosity — your donation directly supports painters
+        in Washington, DC.
       </div>
     );
   }
@@ -97,7 +97,7 @@ export default function DonateClient() {
                 }}
                 className={`rounded-xl border px-4 py-3 font-medium transition-colors ${
                   active
-                    ? "border-blue bg-blue text-paper"
+                    ? "border-blueDeep bg-blue text-ink"
                     : "border-line hover:border-ink"
                 }`}
               >
@@ -127,21 +127,21 @@ export default function DonateClient() {
           </div>
         </div>
 
-        {error && <p className="mt-4 text-sm text-coral">{error}</p>}
+        {error && <p className="mt-4 text-sm text-roseDeep">{error}</p>}
 
         <button
           onClick={handleDonate}
           disabled={loading}
-          className="mt-6 w-full rounded-full bg-gradient-to-r from-blue to-plum py-3.5 font-semibold text-paper transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0"
+          className="mt-6 w-full rounded-full bg-gradient-to-r from-blueDeep to-roseDeep py-3.5 font-semibold text-paper transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0"
         >
           {loading ? "Redirecting…" : "Donate securely"}
         </button>
       </div>
 
       {/* Backup methods */}
-      <div className="rounded-3xl bg-navy p-7 text-paper md:p-9">
+      <div className="rounded-3xl border border-line bg-blue/50 p-7 md:p-9">
         <h2 className="font-display text-2xl font-semibold">Other ways to give</h2>
-        <p className="mt-2 text-sm text-paper/70">
+        <p className="mt-2 text-sm text-muted">
           Prefer a different app? Use any of these.
         </p>
         <ul className="mt-6 space-y-3">
@@ -151,7 +151,7 @@ export default function DonateClient() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between rounded-xl border border-paper/20 px-5 py-4 transition-colors hover:border-coral hover:text-coral"
+                className="flex items-center justify-between rounded-xl border border-ink/15 bg-paper/60 px-5 py-4 transition-colors hover:border-roseDeep hover:text-roseDeep"
               >
                 <span>{link.label}</span>
                 <span aria-hidden>&rarr;</span>

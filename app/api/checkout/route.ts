@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
             product_data: {
               name: "Donation — Noah Marcus Artists Fund",
               description:
-                "Supporting emerging artists in the DC, Maryland, and Virginia area.",
+                "Supporting emerging painters in Washington, DC.",
             },
             unit_amount: Math.round(dollars * 100),
           },
